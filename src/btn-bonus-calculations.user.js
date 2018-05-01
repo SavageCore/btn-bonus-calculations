@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         BTN Bonus Calculations
 // @namespace    https://savagecore.eu
-// @version      0.0.0
+// @version      0.1.0
 // @description  Calculate estimated time until you can buy class upgrade
 // @author       SavageCore
 // @include      http*://broadcasthe.net/bonus.php?action=class
