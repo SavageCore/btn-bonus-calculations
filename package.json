@@ -1,0 +1,26 @@
+{
+  "scripts": {
+    "test": "xo"
+  },
+  "devDependencies": {
+    "xo": "^0.20.3"
+  },
+  "name": "btn-bonus-calculations",
+  "description": "> Display points remaining and time left at current daily point rate until you can afford a promotion at BTN",
+  "version": "0.0.0",
+  "main": "index.js",
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SavageCore/btn-bonus-calculations.git"
+  },
+  "keywords": [
+    "userscript"
+  ],
+  "author": "SavageCore",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/SavageCore/btn-bonus-calculations/issues"
+  },
+  "homepage": "https://github.com/SavageCore/btn-bonus-calculations#readme"
+}
