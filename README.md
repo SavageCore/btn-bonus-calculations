@@ -10,7 +10,7 @@ Click [here](https://github.com/SavageCore/btn-bonus-calculations/raw/master/src
 
 ## Related
 
-- [ahd-bonus-calculations](https://github.com/SavageCore/ahd-bonus-calculations) - Display points remaining and time left at current daily point rate until you can afford an exchange at AHD
+- [ahd-bonus-calculations](https://github.com/SavageCore/ahd-bonus-calculations) - Display points remaining and time left at current daily point rate until you can afford a promotion at AHD
 
 
 ## License
