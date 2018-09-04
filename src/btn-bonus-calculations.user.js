@@ -25,7 +25,7 @@
 		const row = table.rows[i];
 		for (let j = 0; j < row.cells.length; j++) {
 			const col = row.cells[j];
-			if (i === 0 && col.innerText.indexOf(`You don't meet the requirements!`) !== -1) {
+			if (i === 0 && col.innerText.indexOf('You don\'t meet the requirements!') !== -1) {
 				const cost = parseInt(col.innerText.match(/(.*) Points/g)[0].replace(/^\D+|,/g, ''), 10);
 				const remainingPoints = cost - currentPoints;
 				const timeLeft = remainingPoints / pointsPerDay;
@@ -37,7 +37,7 @@
 		}
 	}
 
-	async function getPointsPerDay() {
+	async function getPointsPerDay() { // eslint-disable-line require-await
 		return new Promise((resolve, reject) => {
 			const req = new XMLHttpRequest();
 			req.responseType = 'document';
