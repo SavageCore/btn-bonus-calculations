@@ -17,7 +17,7 @@
 
 	const rateUrl = 'https://broadcasthe.net/bonus.php?action=rate';
 
-	const currentPoints = parseInt(document.getElementById('pointsStats').innerText.replace(/,/g, ''), 10);
+	const currentPoints = parseInt(document.querySelector('#pointsStats').innerText.replace(/,/g, ''), 10);
 	const pointsPerDay = await getPointsPerDay();
 	const table = document.querySelector('div.thin:nth-child(4) > table:nth-child(1)');
 
@@ -37,7 +37,7 @@
 		}
 	}
 
-	async function getPointsPerDay() { // eslint-disable-line require-await
+	async function getPointsPerDay() {
 		return new Promise((resolve, reject) => {
 			const req = new XMLHttpRequest();
 			req.responseType = 'document';
