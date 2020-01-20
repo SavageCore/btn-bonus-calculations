@@ -17,7 +17,7 @@
 
 	const rateUrl = 'https://broadcasthe.net/bonus.php?action=rate';
 
-	const currentPoints = parseInt(document.querySelector('#pointsStats').innerText.replace(/,/g, ''), 10);
+	const currentPoints = parseInt(document.querySelector('#pointsStats').textContent.replace(/,/g, ''), 10);
 	const pointsPerDay = await getPointsPerDay();
 	const table = document.querySelector('div.thin:nth-child(4) > table:nth-child(1)');
 
@@ -25,8 +25,8 @@
 		const row = table.rows[i];
 		for (let j = 0; j < row.cells.length; j++) {
 			const col = row.cells[j];
-			if (i === 0 && col.innerText.indexOf('You don\'t meet the requirements!') !== -1) {
-				const cost = parseInt(col.innerText.match(/(.*) Points/g)[0].replace(/^\D+|,/g, ''), 10);
+			if (i === 0 && col.textContent.includes('You don\'t meet the requirements!')) {
+				const cost = parseInt(col.textContent.match(/(.*) Points/g)[0].replace(/^\D+|,/g, ''), 10);
 				const remainingPoints = cost - currentPoints;
 				const timeLeft = remainingPoints / pointsPerDay;
 				const projectedDate = new Date();
@@ -47,7 +47,7 @@
 				if (req.status === 200) {
 					console.log(req);
 					const dom = req.response;
-					const ret = parseInt(dom.querySelector('div.box:nth-child(7) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(5)').innerText.replace(/,/g, ''), 10);
+					const ret = parseInt(dom.querySelector('div.box:nth-child(7) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(5)').textContent.replace(/,/g, ''), 10);
 					resolve(ret);
 				} else {
 					reject(new Error('Unable to load bonus rate page'));
