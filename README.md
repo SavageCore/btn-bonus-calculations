@@ -1,4 +1,4 @@
-# btn-bonus-calculations [![Build Status](https://travis-ci.org/SavageCore/btn-bonus-calculations.svg?branch=master)](https://travis-ci.org/SavageCore/btn-bonus-calculations) [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
+# btn-bonus-calculations [![Build Status](https://img.shields.io/github/workflow/status/SavageCore/btn-bonus-calculations/test)](https://github.com/SavageCore/btn-bonus-calculations/actions/workflows/npm-test.yml) [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
 
 > Display points remaining and time left at current daily point rate until you can afford a promotion at BTN
 
