@@ -46,7 +46,6 @@
 			request.send(null);
 			request.addEventListener('load', () => {
 				if (request.status === 200) {
-					console.log(request);
 					const dom = request.response;
 					const returnValue = Number.parseInt(dom.querySelector('div.box:nth-child(7) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(5)').textContent.replace(/,/g, ''), 10);
 					resolve(returnValue);
