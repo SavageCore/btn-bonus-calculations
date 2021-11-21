@@ -11,13 +11,14 @@
 // ==/UserScript==
 //
 /* global document XMLHttpRequest humaneDate */
+/* eslint unicorn/prefer-module: "off" */
 
 (async function () {
 	'use strict';
 
 	const rateUrl = 'https://broadcasthe.net/bonus.php?action=rate';
 
-	const currentPoints = parseInt(document.querySelector('#pointsStats').textContent.replace(/,/g, ''), 10);
+	const currentPoints = Number.parseInt(document.querySelector('#pointsStats').textContent.replace(/,/g, ''), 10);
 	const pointsPerDay = await getPointsPerDay();
 	const table = document.querySelector('div.thin:nth-child(4) > table:nth-child(1)');
 
@@ -26,7 +27,7 @@
 		for (let j = 0; j < row.cells.length; j++) {
 			const col = row.cells[j];
 			if (i === 0 && col.textContent.includes('You don\'t meet the requirements!')) {
-				const cost = parseInt(col.textContent.match(/(.*) Points/g)[0].replace(/^\D+|,/g, ''), 10);
+				const cost = Number.parseInt(col.textContent.match(/(.*) Points/g)[0].replace(/^\D+|,/g, ''), 10);
 				const remainingPoints = cost - currentPoints;
 				const timeLeft = remainingPoints / pointsPerDay;
 				const projectedDate = new Date();
@@ -39,16 +40,16 @@
 
 	async function getPointsPerDay() {
 		return new Promise((resolve, reject) => {
-			const req = new XMLHttpRequest();
-			req.responseType = 'document';
-			req.open('GET', rateUrl, true);
-			req.send(null);
-			req.addEventListener('load', () => {
-				if (req.status === 200) {
-					console.log(req);
-					const dom = req.response;
-					const ret = parseInt(dom.querySelector('div.box:nth-child(7) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(5)').textContent.replace(/,/g, ''), 10);
-					resolve(ret);
+			const request = new XMLHttpRequest();
+			request.responseType = 'document';
+			request.open('GET', rateUrl, true);
+			request.send(null);
+			request.addEventListener('load', () => {
+				if (request.status === 200) {
+					console.log(request);
+					const dom = request.response;
+					const returnValue = Number.parseInt(dom.querySelector('div.box:nth-child(7) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(5)').textContent.replace(/,/g, ''), 10);
+					resolve(returnValue);
 				} else {
 					reject(new Error('Unable to load bonus rate page'));
 				}

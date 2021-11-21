@@ -1,9 +1,11 @@
 {
   "scripts": {
-    "test": "xo"
+    "test": "xo",
+    "prepare": "husky install"
   },
   "devDependencies": {
-    "xo": "^0.46.4"
+    "xo": "^0.46.4",
+    "husky": "^7.0.0"
   },
   "name": "btn-bonus-calculations",
   "description": "> Display points remaining and time left at current daily point rate until you can afford a promotion at BTN",
