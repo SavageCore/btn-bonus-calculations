@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         BTN Bonus Calculations
-// @namespace    https://savagecore.eu
+// @namespace    https://savagecore.uk
 // @version      0.1.0
 // @description  Calculate estimated time until you can buy class upgrade
 // @author       SavageCore
@@ -33,7 +33,7 @@
 				const projectedDate = new Date();
 				projectedDate.setDate(projectedDate.getDate() + timeLeft);
 				col.title = 'Exact days left: ' + timeLeft;
-				col.innerHTML = col.innerHTML.replace(/You don't meet the requirements!/, remainingPoints.toLocaleString() + ' Points remaining<br />' + humaneDate(projectedDate) + ' left');
+				col.innerHTML = remainingPoints > 0 ? col.innerHTML.replace(/You don't meet the requirements!/, remainingPoints.toLocaleString() + ' Points remaining<br />' + humaneDate(projectedDate) + ' left') : col.innerHTML.replace(/You don't meet the requirements!/, '<a href="https://broadcasthe.net/user.php?action=next_class">Click here</a> to see additional requirements');
 			}
 		}
 	}
