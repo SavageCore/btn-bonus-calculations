@@ -4,7 +4,7 @@
     "prepare": "husky install"
   },
   "devDependencies": {
-    "xo": "^0.47.0",
+    "xo": "^0.53.1",
     "husky": "^8.0.3"
   },
   "name": "btn-bonus-calculations",
