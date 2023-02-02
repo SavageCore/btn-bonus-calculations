@@ -13,7 +13,7 @@
 /* global document XMLHttpRequest humaneDate */
 /* eslint unicorn/prefer-module: "off" */
 
-(async function () {
+async function main() {
 	'use strict';
 
 	const rateUrl = 'https://broadcasthe.net/bonus.php?action=rate';
@@ -55,4 +55,6 @@
 			});
 		});
 	}
-})();
+}
+
+await main();
